@@ -64,23 +64,65 @@
 `find  -newer file` Finds files that are newer than file.
 
 #### Examples for find
-`find /usr/local -name *conf`
-`find . -mtime +10 -mtime -13`
-`find . -name "s*" -ls`
-`find . -size +300M`
-`find . -type d -newer b.txt`
+`find /usr/local -name *conf`  
+`find . -mtime +10 -mtime -13`  
+`find . -name "s*" -ls`  
+`find . -size +300M`  
+`find . -type d -newer b.txt`  
 
 > `locate` is faster option for find.  
 
 `cat file`  Display the entire contents of file.  
 `more file` Browse through a text file. Press the Spacebar to advance to the next page.  
 
-> By default head and tai`l only display ten lines.  
+> By default head and tail only display ten lines.  
 `head -2 file.txt` 
 
 `sdiff file1 file2` or `vimdiff file1 file2` Compare two files side by side.
 
+`file test` to see file type.  
 
+`grep username test.txt` to search username.  
+`grep -v username test.txt` not matched lines. 
+`grep -i name test.txt` ignoring case.  
+`grep -c` count the number.  
+`grep -n` Precede output with line numbers from the file.  
 
+`strings file` Display printable strings in binary files.  
 
+`strings BlueTrain.mp3 | grep -i john | head -1 | cut -d ' ' -f 2` space as the delimiter (-d ' ') , second field (-f 2)  
 
+`grep bob /etc/passwd | cut -f1,5 -d: | sort` 
+
+`sed 's/unix/linux/' linux.txt` to change unix with linux.  
+`sed 's/unix/linux/g' linux.txt` to change all words.  
+
+`grep bob /etc/passwd d: | sort | sed 's/:/ /' | column -t`  to see columns nicely.
+
+`cp source_file destination_file` 
+`cp source_file1 [source_fileN ...] destination_directory` Copy source_files to destination_directory.  
+
+`cp -i source_file destination_file` If the destination_file exists, cp will prompt you before it overwrites the file.  
+
+`cp -r source_directory destination` Copy source_directory recursively to destination. If destination exists, copy source_directory into destination, otherwise create destination with the contents of directory.  
+
+`mv -i source destination` Run mv in interactive mode. If the destination exists, mv will prompt you before it overwrites the file.  
+
+`sort file` - Sort text in file.  
+`sort -k F file` Sort by key. The F following -k is the field number.  
+`sort -r file` - Sort in reverse order.  
+`sort -u file` - Sort text in file, removing duplicate lines.  
+
+`tar [-] c|x|t f tarfile [pattern]` Create, extract or list contents of a tar archive using pattern, if supplied.  
+
+>> c - Create a tar archive.  
+>> x - Extract files from the archive.  
+>> t - Display the table of contents (list).  
+>> v - Causes tar to be verbose.  
+>> f file - The tar archive file to perform operations against.  
+
+`gzip file` - Compress file. The resulting compressed file is named file.gz.  
+`gunzip file` - Uncompress files.  
+`gzcat` or `zcat` - Concatenates and prints compressed files.  
+
+`du -h`- Display sizes in human readable format.  
