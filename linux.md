@@ -126,3 +126,22 @@
 `gzcat` or `zcat` - Concatenates and prints compressed files.  
 
 `du -h`- Display sizes in human readable format.  
+
+> Use the greater-than sign (>) to redirect output and the less-than sign (<) to redirect input.  
+
+`sort < files.txt`  
+`sort < files.txt > sorted_files.txt`  
+
+> To redirect the error messages you had to explicitly specify file descriptor 2 with 2>  
+
+`ls here not-here 2> out.err`  
+
+> If you want to capture both standard output and standard error, use 2>&1.  
+
+`ls here not-here > out.both 2>&1`  
+`cat sample.txt &> out` short way  
+`command 2> error.txt 1> output.txt` to send different file. 
+> /dev/null - Redirect output to nowhere
+`ls here not-here 2> /dev/null` ouf terminal result : here  
+`ls here not-here > /dev/null 2>&1` you cannot see anything in your terminal.  
+
