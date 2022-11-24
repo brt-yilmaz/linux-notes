@@ -10,6 +10,8 @@
 
 `which <commandName>`  to see command path.  
 
+---
+
 `cd -` to navigate previous working directory.  
 
 `mkdir [-p] directory` - Create a directory. Use the -p (parents) option to create intermediate directories.  
@@ -29,6 +31,8 @@
 `tree` List content of directories in a tree-like format.  
 `tree -d`  List directories only.  
 
+---
+
 `groups <groupName>` to see users of specific group.  
 
 > `chmod` The change mode command.
@@ -41,7 +45,7 @@
 
 > you can give permissions with numeric too.
 
-#### Examples for chmod
+##### Examples for chmod
 
 `chmod g+w sales.data`  
 `chmod g+wx sales.data`  
@@ -57,6 +61,8 @@
 
 [Ubuntu ACL Documentation](https://help.ubuntu.com/community/FilePermissionsACLs)
 
+---
+
 `find` it find all files in the current directory.
 `find -name <filename>` Displays files whose name matches pattern. This is case sensitive.
 `find -iname <filename>` Same as -name, but ignores case.
@@ -71,6 +77,8 @@
 `find . -type d -newer b.txt`  
 
 > `locate` is faster option for find.  
+
+---
 
 `cat file`  Display the entire contents of file.  
 `more file` Browse through a text file. Press the Spacebar to advance to the next page.  
@@ -99,6 +107,8 @@
 
 `grep bob /etc/passwd d: | sort | sed 's/:/ /' | column -t`  to see columns nicely.
 
+---
+
 `cp source_file destination_file` 
 `cp source_file1 [source_fileN ...] destination_directory` Copy source_files to destination_directory.  
 
@@ -108,10 +118,14 @@
 
 `mv -i source destination` Run mv in interactive mode. If the destination exists, mv will prompt you before it overwrites the file.  
 
+---
+
 `sort file` - Sort text in file.  
 `sort -k F file` Sort by key. The F following -k is the field number.  
 `sort -r file` - Sort in reverse order.  
 `sort -u file` - Sort text in file, removing duplicate lines.  
+
+---
 
 `tar [-] c|x|t f tarfile [pattern]` Create, extract or list contents of a tar archive using pattern, if supplied.  
 
@@ -125,7 +139,9 @@
 `gunzip file` - Uncompress files.  
 `gzcat` or `zcat` - Concatenates and prints compressed files.  
 
-`du -h`- Display sizes in human readable format.  
+`du -h`- Display sizes in human readable format. 
+
+---
 
 > Use the greater-than sign (>) to redirect output and the less-than sign (<) to redirect input.  
 
@@ -145,12 +161,16 @@
 `ls here not-here 2> /dev/null` ouf terminal result : here  
 `ls here not-here > /dev/null 2>&1` you cannot see anything in your terminal.  
 
+---
+
 `history` - Display a list of commands in the shell history.  
 `!N` - Repeat command line number N.  
 `!!` - Repeat the previous command line.  
 `!string` - Repeat the most recent command starting with "string."  
 
 `Ctrl-r` - Reverse search. Search for commands in your shell history.  
+
+---
 
 `ps` - Display process status.  
 `ps -e` - Display all processes.  
@@ -188,4 +208,10 @@ $ ps | grep hard-to-stop
 27398 pts/1    00:00:00 hard-to-stop  
 $ kill -9 27398  
 $ ps | grep hard-to-stop  
-```  
+```
+
+---
+
+`su [username]` - Change user ID or become superuser.  
+`-c command` - Specify a command to be executed. If the command is more than one word in length, it needs to be quoted.  
+`whoami` - Displays the effective username.  
