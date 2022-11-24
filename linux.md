@@ -145,3 +145,47 @@
 `ls here not-here 2> /dev/null` ouf terminal result : here  
 `ls here not-here > /dev/null 2>&1` you cannot see anything in your terminal.  
 
+`history` - Display a list of commands in the shell history.  
+`!N` - Repeat command line number N.  
+`!!` - Repeat the previous command line.  
+`!string` - Repeat the most recent command starting with "string."  
+
+`Ctrl-r` - Reverse search. Search for commands in your shell history.  
+
+`ps` - Display process status.  
+`ps -e` - Display all processes.  
+`ps -ef` - Display all processes.  
+`ps -eH` - Display a process tree.  
+`ps -p pid` - Display process information for pid. A PID is a process ID.  
+`ps -u username` - Display processes running as username.  
+`pstree` - Display running processes in a tree format.  
+`htop` - Interactive process viewer. This command is less common than top and may not be available on the system.  
+`top` - Interactive process viewer.  
+
+---
+
+`command &` - Start command in the background.  
+`Ctrl-c` - Kill the foreground process.  
+`Ctrl-z` - Suspend the foreground process.  
+`bg [%num]` - Background a suspended process.  
+`fg [%num]` - Foreground a background process.  
+`kill [%num]` - Kill a process by job number or PID.  
+`jobs [%num]` - List jobs.  
+`kill [signal] pid` - Send a signal to a process.  
+`kill -l` - Display a list of signals.  
+
+> The plus sign (+) in the jobs output represents the current job while the minus sign (-) represents the previous job.  
+
+> To foreground job number 3, execute %3 or `fg %3`.  
+
+> If a process does not terminate when you send it the TERM signal, use the KILL signal which is number 9.  
+
+``` shell
+ps | grep hard-to-stop   
+27398 pts/1    00:00:00 hard-to-stop  
+$ kill 27398 
+$ ps | grep hard-to-stop  
+27398 pts/1    00:00:00 hard-to-stop  
+$ kill -9 27398  
+$ ps | grep hard-to-stop  
+```  
