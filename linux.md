@@ -215,3 +215,43 @@ $ ps | grep hard-to-stop
 `su [username]` - Change user ID or become superuser.  
 `-c command` - Specify a command to be executed. If the command is more than one word in length, it needs to be quoted.  
 `whoami` - Displays the effective username.  
+
+### Installing Software on CentOS, Fedora, and RedHat Distributions.  
+
+`yum search search-string` - Search for search-string.  
+
+`yum install [-y] package` - Install package. Use the -y option to automatically answer yes to yum's questions.  
+
+`yum remove package` - Remove/uninstall package.  
+
+`yum info [package]` - Display information about package.  
+
+> In addition to the yum command, you can use the rpm command to interact with the package manager.  
+
+`rpm -qa` - List all the installed packages.  
+`rpm -qf /path/to/file` - List the package that contains file.  
+`rpm -ivh package.rpm` - Install a package from the file named package.  
+`rpm. rpm -ql package` - List all files that belong to package.  
+
+### Installing Software on Debian and Ubuntu.  
+
+`apt-cache search search-string` - Search for search-string.  
+
+`apt-get install [-y] package` - Install package. Use the -y option to automatically answer yes to apt-get's questions.  
+
+`apt-get remove package` - Remove/uninstall package, leaving behind configuration files.  
+
+`apt-get purge package` - Remove/uninstall package, deleting configuration files.  
+
+`apt-cache show package` - Display information about package.  
+
+> In addition the apt utilities, you can use the dpkg command to interact with the package manager.  
+
+`dgpk -l` - List all the installed packages.  
+
+`dpkg -S /path/to/file` - List the package that contains file.  
+
+`dpkg -i package.deb` - Install a package from the file named package.deb.  
+
+`dpkg -L package` - List all files that belong to package.  
+
